@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="700.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.Opptatte_Controller">
+    <content>
+        <BorderPane id="borderpane" prefHeight="800.0" prefWidth="800.0">
+            <center>
+                <SplitPane dividerPositions="0.2496194824961948" orientation="VERTICAL" prefHeight="200.0"
+                           prefWidth="160.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                    minWidth="-Infinity" prefHeight="52.0" prefWidth="349.0">
+                            <children>
+                                <Label id="overskrift" alignment="CENTER" cache="true" contentDisplay="CENTER"
+                                       layoutX="84.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                                       minHeight="-Infinity" minWidth="-Infinity" text="Opptatte Vikarer">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="695.0">
+                            <children>
+                                <TableView fx:id="opptatteTable" layoutX="1.0" layoutY="-7.0"
+                                           maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                           prefHeight="641.0" prefWidth="691.0"
+                                           AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="1.0"
+                                           AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="fornavnCol" prefWidth="122.0" text="Fornavn"/>
+                                        <TableColumn fx:id="etternavnCol" prefWidth="121.0" text="Etternavn"/>
+                                        <TableColumn fx:id="jobbKategoriCol" prefWidth="180.0" text="Katagori"/>
+                                        <TableColumn fx:id="arbeidsgiverNavnCol" prefWidth="148.5" text="Arbeidsgiver"/>
+                                        <TableColumn fx:id="stillingsNavnCol" prefWidth="118.5" text="Stillingsnavn"/>
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </content>
+</ScrollPane>

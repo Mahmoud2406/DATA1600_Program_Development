@@ -1,0 +1,123 @@
+
+#hboxNav {
+    -fx-background-color: dodgerblue;
+}
+
+
+.split-pane:horizontal > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+
+.split-pane:vertical > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+
+.split-pane, .text-field, .combobox {
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+}
+
+.combobox {
+    -fx-effect: dropshadow(three-pass-box, rgba(19, 20, 30, 0.53), 2, 0.0, 0.0, 3);
+    -fx-text-fill: dodgerblue;
+    -fx-background-color: white;
+    -fx-font-family: "Arial";
+}
+
+.button:hover {
+    -fx-background-color: #1564b2;
+    -fx-scale-y: 1.1;
+}
+
+.knapp {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0.0, 0);
+    -fx-text-fill: white;
+    -fx-background-color: dodgerblue;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+}
+
+
+.checkboxBorder {
+    -fx-effect: dropshadow(three-pass-box, rgba(19, 20, 30, 0.53), 2, 0.0, 0.0, 3);
+    -fx-text-fill: dodgerblue;
+    -fx-background-color: white;
+    -fx-font-family: "Arial";
+}
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: grey;
+    -fx-border-radius: 3px;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #28a3f4;
+}
+
+.select {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0.0, 0);
+
+    -fx-background-color: dodgerblue;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: dodgerblue;
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+}
+
+
+#overskrift {
+    -fx-text-fill: dodgerblue;
+    -fx-font-size: 30px;
+    -fx-font-family: "Arial";
+    -fx-fill: #818181;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+
+}
+
+
+#tekst {
+    -fx-text-fill: dodgerblue;
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-fill: #818181;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+
+}
+
+#inputTekst {
+    -fx-text-fill: dodgerblue;
+    -fx-font: 15px "Arial";
+    -fx-fill: #818181;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+.errorTekst {
+    -fx-text-fill: red;
+    -fx-font-family: "Arial";
+    -fx-background-color: transparent ;
+    -fx-progress-color: transparent;
+
+}
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+
+.input {
+    -fx-effect: dropshadow(three-pass-box, rgba(19, 20, 30, 0.53), 2, 0.0, 0.0, 3);
+
+}
+
+
+#borderpane {
+    -fx-background-image: url("/resource/Icons/Background.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}

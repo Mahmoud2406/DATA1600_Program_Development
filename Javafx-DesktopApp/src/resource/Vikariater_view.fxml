@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="borderpane" fx:id="idPane" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Vikariater_Controller">
+    <top>
+        <fx:include fx:id="Menybar" source="Menybar_view.fxml" />
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.49888641425389757" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <items>
+                <GridPane id="gridpane" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="446.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" maxWidth="150.0" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                        <ColumnConstraints hgrow="NEVER" maxWidth="150.0" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="40.0" minHeight="10.0" percentHeight="13.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints prefHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="182.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="182.0" minHeight="0.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="183.5" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="236.0" minHeight="10.0" prefHeight="87.5" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="383.5" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TextField fx:id="arbeidsSted" prefHeight="30.0" prefWidth="200.0" promptText="Arbeidssted" styleClass="input" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="lonnNivo" maxHeight="-Infinity" prefHeight="30.0" prefWidth="0.0" promptText="Lønnsnivå (eks &quot;200 000&quot;) i kr" styleClass="input" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                        <TextField fx:id="varighet" prefHeight="30.0" prefWidth="200.0" promptText="Varighet (eks 2019-2020)" styleClass="input" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <TextField fx:id="arbeidsTid" prefHeight="30.0" prefWidth="267.0" promptText="Arbeidstid (eks : 50%) stilling" styleClass="input" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+
+                        <ComboBox fx:id="kategori" prefHeight="30.0" prefWidth="1081.0" promptText="Velg jobbkategori" styleClass="combobox" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="utdanning" prefHeight="30.0" prefWidth="1004.0" promptText="Velg utdanning" styleClass="combobox" GridPane.rowIndex="2" />
+                        <Label id="overskrift" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="41.0" prefWidth="399.0" text="Ledige vikariater">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <SplitPane dividerPositions="0.5" maxHeight="80.0" minHeight="20.0" orientation="VERTICAL" prefHeight="20.0" GridPane.columnIndex="2" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                            <items>
+                                <Label id="tekst" text="Stillingstype" />
+                                <SplitPane dividerPositions="0.23232323232323232" maxHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="60.0" prefWidth="198.0">
+                                    <items>
+                                        <RadioButton fx:id="fast" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="97.0" selected="true" text="Fast" textOverrun="CENTER_ELLIPSIS">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="gender" />
+                                            </toggleGroup>
+                                        </RadioButton>
+                                        <RadioButton fx:id="engasjement" contentDisplay="CENTER" mnemonicParsing="false" text="Engesjement" toggleGroup="$gender" />
+                                    </items>
+                                </SplitPane>
+                            </items>
+                        </SplitPane>
+                        <SplitPane dividerPositions="0.5" maxHeight="80.0" minHeight="20.0" orientation="VERTICAL" prefHeight="20.0" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                            <items>
+                                <Label id="tekst" text="Krav til kvalifikasjoner" />
+                                <TextArea fx:id="kvalifikasjoner" maxHeight="1.7976931348623157E308" prefHeight="17.0" prefWidth="176.0" promptText="Skriv inn kravene" styleClass="input" />
+                            </items>
+                        </SplitPane>
+                        <ComboBox fx:id="velgArbeidsGiver" prefHeight="30.0" prefWidth="1002.0" promptText="Velg Arbeidsgiver" styleClass="combobox" GridPane.rowIndex="1" />
+                        <SplitPane dividerPositions="0.4057971014492754" maxHeight="80.0" minHeight="20.0" orientation="VERTICAL" prefHeight="20.0" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                            <items>
+                                <Label id="tekst" text="Arbeidsoppgaver" />
+                                <TextArea fx:id="arbeidsOppgaver" promptText="Skriv inn oppgavene" styleClass="input" />
+                            </items>
+                        </SplitPane>
+                        <SplitPane dividerPositions="0.5" maxHeight="80.0" minHeight="20.0" orientation="VERTICAL" prefHeight="20.0" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                            <items>
+                                <Label id="tekst" text="Stillingsbeskrivelse" />
+                                <TextArea fx:id="stillingsBeskrivelse" promptText="Skriv inn beskrivelse" styleClass="input" />
+                            </items>
+                        </SplitPane>
+                        <TextField fx:id="stillingsNavn" prefHeight="30.0" prefWidth="200.0" promptText="Stillingsnavn" styleClass="input" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="txtError" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="69.0" prefWidth="376.0" styleClass="errorTekst" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
+                  <Label id="inputTekst" text="Arbeidsgiver" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                  <Label id="inputTekst" text="Utdanning" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                  <Label id="inputTekst" text="Stillingsnavn" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                  <Label id="inputTekst" text="Arbeidssted" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                  <Label id="inputTekst" text="Jobbkategori" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+                  <Label id="inputTekst" text="Arbeidsstid" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+                  <Label id="inputTekst" text="Lønnsnivå" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                  <Label id="inputTekst" text="Varighet" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </GridPane>
+            <SplitPane dividerPositions="0.04697986577181208, 0.5" orientation="VERTICAL">
+               <items>
+                   <TextField fx:id="search" alignment="CENTER" maxWidth="-Infinity" prefWidth="200.0" promptText="Søk">
+                  </TextField>
+                   <TableView fx:id="vikariatTable" onMouseClicked="#getSelected" prefHeight="596.0" prefWidth="143.0">
+                          <columns>
+                              <TableColumn fx:id="stillingsnavnCol" minWidth="100.0" prefWidth="-1.0" text="Stillingsnavn" />
+                              <TableColumn fx:id="arbeidsgiverCol" minWidth="100.0" prefWidth="-1.0" text="Arbeidsgiver" />
+                              <TableColumn fx:id="utdanningCol" minWidth="100.0" prefWidth="-1.0" text="Utdanning" />
+                              <TableColumn fx:id="jobbkategoriCol" minWidth="100.0" prefWidth="-1.0" text="Jobbkategori" />
+                              <TableColumn fx:id="stillingstypeCol" minWidth="100.0" prefWidth="-1.0" text="Stillingstype" />
+                              <TableColumn fx:id="oppgaverCol" minWidth="100.0" prefWidth="-1.0" text="Arbeidsoppgaver" />
+                              <TableColumn fx:id="kvalifikasjonerCol" minWidth="100.0" prefWidth="-1.0" text="Kvalifikasjoner" />
+                              <TableColumn fx:id="arbeidsstedCol" minWidth="100.0" prefWidth="-1.0" text="Arbeidssted" />
+                              <TableColumn fx:id="arbeidsstidCol" minWidth="100.0" prefWidth="-1.0" text="Arbeidsstid" />
+                              <TableColumn fx:id="varighetCol" minWidth="100.0" prefWidth="-1.0" text="Varighet" />
+                              <TableColumn fx:id="lonnsnivaCol" minWidth="100.0" prefWidth="-1.0" text="Lønnsnivå" />
+                              <TableColumn fx:id="stillingsbeskrivelseCol" minWidth="100.0" prefWidth="-1.0" text="Stillingsbeskrivelse" />
+                          </columns>
+                      </TableView>
+                  <ProgressBar fx:id="idProgressBar" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="0.0" />
+               </items>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </SplitPane>
+            </items>
+        </SplitPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <SplitPane dividerPositions="0.5" maxWidth="1.7976931348623157E308" prefWidth="900.0">
+                    <items>
+                        <FlowPane alignment="CENTER" prefHeight="46.0" prefWidth="411.0">
+                            <children>
+                                <Button fx:id="btnRegister" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onActionRegister" prefHeight="30.0" prefWidth="135.0" styleClass="knapp" text="Registrer" textAlignment="CENTER">
+                                    <FlowPane.margin>
+                                        <Insets left="5.0" right="5.0" />
+                                    </FlowPane.margin>
+                                </Button>
+                                <Button fx:id="btnDelete" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onActionDelete" prefHeight="30.0" prefWidth="135.0" styleClass="knapp" text="Slett" textAlignment="CENTER">
+                                    <FlowPane.margin>
+                                        <Insets left="5.0" right="5.0" />
+                                    </FlowPane.margin>
+                                </Button>
+                                <Button fx:id="btnUpdate" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onActionUpdate" prefHeight="30.0" prefWidth="135.0" styleClass="knapp" text="Oppdater" textAlignment="CENTER">
+                                    <FlowPane.margin>
+                                        <Insets left="5.0" right="5.0" />
+                                    </FlowPane.margin>
+                                </Button>
+                            </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER">
+                            <children>
+                                <Button fx:id="btnSaveToNewFile" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onActionSaveToNewFile" prefHeight="30.0" prefWidth="135.0" styleClass="knapp" text="Lagre til fil" textAlignment="CENTER">
+                                    <FlowPane.margin>
+                                        <Insets left="5.0" right="5.0" />
+                                    </FlowPane.margin>
+                                </Button>
+                                <Button fx:id="btnChooseFile" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onActionChooseFile" prefHeight="30.0" prefWidth="135.0" styleClass="knapp" text="Hent fra fil" textAlignment="CENTER">
+                                    <FlowPane.margin>
+                                        <Insets left="5.0" right="5.0" />
+                                    </FlowPane.margin>
+                                </Button>
+                            </children>
+                        </FlowPane>
+                    </items>
+                </SplitPane>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

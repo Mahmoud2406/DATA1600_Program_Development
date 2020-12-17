@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane id="borderpane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Main_Controller">
+    <top>
+        <fx:include fx:id="Menybar" source="Menybar_view.fxml" />
+    </top>
+    <center>
+        <GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="602.0" prefWidth="798.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="8.0" percentWidth="15.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="215.0" minHeight="-Infinity" prefHeight="194.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="65.5" minHeight="30.5" prefHeight="58.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="494.5" minHeight="-Infinity" prefHeight="353.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="146.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <Group GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                    <children>
+                        <Label id="overskrift" alignment="CENTER" layoutX="10.0" prefHeight="20.0" prefWidth="230.0" text="Jobbsøkere">
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </Label>
+                        <ComboBox fx:id="vikarKategori" layoutX="86.0" layoutY="54.0" onAction="#KategoriJobbsoker" prefWidth="150.0" styleClass="combobox" />
+                        <Label layoutX="4.0" layoutY="58.0" text="Velg Kategori" />
+                    </children>
+                    <GridPane.margin>
+                        <Insets bottom="10.0" />
+                    </GridPane.margin>
+                </Group>
+                <TableView fx:id="jobbsokerTable" onMouseClicked="#getSelectedJobbsoker" prefHeight="468.0" prefWidth="321.0" GridPane.rowIndex="2">
+                    <columns>
+                        <TableColumn fx:id="fornavnCol" minWidth="80.0" text="Fornavn" />
+                        <TableColumn fx:id="etternavnCol" minWidth="80.0" text="Etternavn" />
+                        <TableColumn fx:id="adresseCol" minWidth="80.0" text="Adresse" />
+                        <TableColumn fx:id="poststedcol" minWidth="80.0" text="Poststed" />
+                        <TableColumn fx:id="postNrCol" minWidth="80.0" text="Postnr" />
+                        <TableColumn fx:id="tlfCol" minWidth="80.0" text="Tlf" />
+                        <TableColumn fx:id="kjonnCol" minWidth="80.0" text="Kjønn" />
+                        <TableColumn fx:id="jobberfCol" minWidth="80.0" text="Jobberfaring" />
+                        <TableColumn fx:id="fodtSelCol" minWidth="80.0" text="Fødselsdato" />
+                        <TableColumn fx:id="utdanningCol" minWidth="80.0" text="Utdanning" />
+                        <TableColumn fx:id="lonnkravCol" minWidth="80.0" text="Lønnskrav" />
+                        <TableColumn fx:id="refNavnCol" minWidth="80.0" text="refNavn" />
+                        <TableColumn fx:id="refNrCol" minWidth="80.0" text="refNr" />
+                        <TableColumn fx:id="jobbkategoriCol" minWidth="80.0" text="Jobbkategori" />
+                    </columns>
+                </TableView>
+                <Button fx:id="btnRegister" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onActionRegister" prefHeight="32.0" prefWidth="215.0" styleClass="knapp" text="Registrer" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="50.0" />
+               </GridPane.margin></Button>
+                <Group GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+                <Group GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                    <children>
+                        <Label id="overskrift" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" prefHeight="29.0" prefWidth="230.0" text="Ledige Vikariater">
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </Label>
+                        <ComboBox fx:id="arbeidsgiverKategori" layoutX="82.0" layoutY="53.0" onAction="#kategoriVikariater" prefWidth="150.0" styleClass="combobox" />
+                        <Label layoutY="57.0" text="Velg Kategori" />
+                    </children>
+                    <GridPane.margin>
+                        <Insets bottom="10.0" />
+                    </GridPane.margin>
+                </Group>
+                <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" layoutX="532.0" layoutY="547.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="398.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <ImageView fitHeight="87.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true" styleClass="img" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                    <image>
+                        <Image url="@Icons/connect.png" />
+                    </image>
+                </ImageView>
+                <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="400.0" GridPane.rowIndex="3" />
+                <TextArea id="tekst" fx:id="lblResult" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="98.0" prefWidth="303.0" styleClass="listview" visible="true" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+               <GridPane.margin>
+                  <Insets top="15.0" />
+               </GridPane.margin></TextArea>
+                <TableView fx:id="vikariatTable" onMouseClicked="#getSelectedVikariat" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <columns>
+                        <TableColumn fx:id="stillingsnavnCol" minWidth="100.0" prefWidth="-1.0" text="Stillingsnavn" />
+                        <TableColumn fx:id="arbeidsgiverCol" minWidth="100.0" prefWidth="-1.0" text="Arbeidsgiver" />
+                        <TableColumn fx:id="vutdanningCol" minWidth="100.0" prefWidth="-1.0" text="Utdanning" />
+                        <TableColumn fx:id="vjobbkategoriCol" minWidth="100.0" prefWidth="-1.0" text="Jobbkategori" />
+                        <TableColumn fx:id="stillingstypeCol" minWidth="100.0" prefWidth="-1.0" text="Stillingstype" />
+                        <TableColumn fx:id="oppgaverCol" minWidth="100.0" prefWidth="-1.0" text="Arbeidsoppgaver" />
+                        <TableColumn fx:id="kvalifikasjonerCol" minWidth="100.0" prefWidth="-1.0" text="Kvalifikasjoner" />
+                        <TableColumn fx:id="arbeidsstedCol" minWidth="100.0" prefWidth="-1.0" text="Arbeidssted" />
+                        <TableColumn fx:id="arbeidsstidCol" minWidth="100.0" prefWidth="-1.0" text="Arbeidsstid" />
+                        <TableColumn fx:id="varighetCol" minWidth="100.0" prefWidth="-1.0" text="Varighet" />
+                        <TableColumn fx:id="lonnsnivaCol" minWidth="100.0" prefWidth="-1.0" text="Lønnsnivå" />
+                        <TableColumn fx:id="stillingsbeskrivelseCol" minWidth="100.0" prefWidth="-1.0" text="Stillingsbeskrivelse" />
+                    </columns>
+                </TableView>
+                <Label id="tekst" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="173.0" text="Rett vikar til rett virksomhet " textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets bottom="30.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label id="tekst" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="387.0" text="Marker en jobbsøker og et vikariat deretter registrer" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <ProgressBar fx:id="idProgressBar" minWidth="-Infinity" prefHeight="18.0" prefWidth="881.0" progress="0.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+
+                <Button fx:id="btnOpptatte" alignment="CENTER" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#opptatteStillinger" prefHeight="32.0" prefWidth="161.0" styleClass="knapp" text="Opptatte Stillinger" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+               <GridPane.margin>
+                  <Insets top="80.0" />
+               </GridPane.margin>
+                </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </GridPane>
+    </center>
+    <bottom>
+        <FlowPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="783.0" BorderPane.alignment="CENTER" />
+    </bottom>
+</BorderPane>
